@@ -1,0 +1,16 @@
+.signUp-content {
+  margin: 10vw 20vw;
+  padding: 20vh;
+}
+.user-img {
+  width: 80px !important;
+  height: auto !important;
+}
+.text-signUp {
+  color: #339476;
+  margin-bottom: 3vw;
+  margin-top: 2vw;
+}
+.signUp-btn {
+  background-color: #339476 !important;
+}
