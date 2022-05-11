@@ -1,4 +1,4 @@
-.cardDetail-content {
+.payment-content {
   margin: 1vw 12vw;
   padding: 3vh;
 }
@@ -7,12 +7,12 @@
   height: auto !important;
   justify-content: center;
 }
-.text-cardDetail {
+.text-payment {
   color: #523a6d;
 }
-.btn-cardDetail {
+.btn-payment {
   background-color: #523a6d !important;
-  width: 14vh;
+  width: 40vh;
 }
 .btn-product {
   outline-color: #523a6d;

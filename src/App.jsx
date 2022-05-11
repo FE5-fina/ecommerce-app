@@ -11,6 +11,7 @@ import Header from "./components/Header.jsx";
 import FooterComponent from "./components/Footer.jsx";
 import DetailProduct from "./pages/DetailProduct/DetailProduct.jsx";
 import CardDetail from "./pages/CardDetail/CardDetail.jsx";
+import Payment from "./pages/Payment/Payment.jsx";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
         <Route path="/edit-profile" element={<EditProfile />} />
 
         <Route path="/card" element={<CardDetail />} />
+        <Route path="/payment" element={<Payment />} />
       </Routes>
       <FooterComponent />
     </BrowserRouter>

@@ -56,9 +56,9 @@ function CardDetail() {
               <p>Rp.89.000</p>
             </Col>
             <Col xs={2} md={2}>
-              <Button variant="outline-success">-</Button>{" "}
-              <Button variant="outline-success">1</Button>{" "}
-              <Button variant="outline-success">+</Button>{" "}
+              <Button variant="outline-secondary">-</Button>{" "}
+              <Button variant="outline-secondary">1</Button>{" "}
+              <Button variant="outline-secondary">+</Button>{" "}
             </Col>
             <Col xs={2} md={2}>
               <p className="text-cardDetail">Rp.89.000</p>
@@ -85,9 +85,9 @@ function CardDetail() {
               <p>Rp.139.000</p>
             </Col>
             <Col xs={2} md={2}>
-              <Button variant="outline-success">-</Button>{" "}
-              <Button variant="outline-success">1</Button>{" "}
-              <Button variant="outline-success">+</Button>{" "}
+              <Button variant="outline-secondary">-</Button>{" "}
+              <Button variant="outline-secondary">1</Button>{" "}
+              <Button variant="outline-secondary">+</Button>{" "}
             </Col>
             <Col xs={2} md={2}>
               <p className="text-cardDetail">Rp.139.000</p>
@@ -110,7 +110,7 @@ function CardDetail() {
               <h6 className="text-cardDetail">Rp.228.000</h6>
             </Col>
             <Col xs={2} md={2}>
-              <Button className="btn-login" type="submit">
+              <Button className="btn-cardDetail" type="submit">
                 Order
               </Button>
             </Col>

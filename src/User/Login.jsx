@@ -2,7 +2,7 @@ import React from "react";
 import { Form, Button } from "react-bootstrap";
 import "../style/Login.css";
 
-import user from "../img/user.png";
+import user from "../img/logo-3.svg";
 
 function Login() {
   return (
