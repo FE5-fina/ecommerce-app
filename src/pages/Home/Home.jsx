@@ -1,11 +1,16 @@
 import React from "react";
 import { Card, Button, Container } from "react-bootstrap";
 
+import banner from "./img/banner.png";
+
 function Home() {
   return (
     <div>
       {/* list product */}
       <Container>
+        <div>
+          <img src={banner} alt="welcome-benner" />
+        </div>
         <Card style={{ width: "18rem" }} className="px-3 justify-content-around">
           <Card.Img />
           <Card.Body>

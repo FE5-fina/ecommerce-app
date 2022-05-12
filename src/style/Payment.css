@@ -1,0 +1,19 @@
+.payment-content {
+  margin: 1vw 12vw;
+  padding: 3vh;
+}
+.product-img {
+  width: 80px !important;
+  height: auto !important;
+  justify-content: center;
+}
+.text-payment {
+  color: #523a6d;
+}
+.btn-payment {
+  background-color: #523a6d !important;
+  width: 40vh;
+}
+.btn-product {
+  background-color: #523a6d !important;
+}

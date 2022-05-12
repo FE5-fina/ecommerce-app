@@ -1,0 +1,16 @@
+.profile-content {
+  margin: 3vw 10vw;
+  padding: 5vh;
+}
+.user-img {
+  width: 150px !important;
+  height: auto !important;
+}
+.text-profile {
+  color: #523a6d;
+  margin-bottom: 3vw;
+  margin-top: 2vw;
+}
+.btn-edit {
+  background-color: #523a6d !important;
+}
