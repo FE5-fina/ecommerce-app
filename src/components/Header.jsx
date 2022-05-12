@@ -1,25 +1,23 @@
 import React from "react";
-import { Navbar, Container, Button } from "react-bootstrap";
+import { Navbar, Container, Button, InputGroup, FormControl } from "react-bootstrap";
 import "../style/Header.css";
 
-import logoTokped from "../img/tokpedlogo.svg";
+import logo from "../img/logo.png";
 
 function Header() {
   return (
-    <Navbar bg="light" expand="lg">
+    <Navbar className="color-bg" expand="lg">
       <Container>
         <Navbar.Brand href="#home">
-          <img src={logoTokped} className="d-inline-block align-top" alt="React Bootstrap logo" />
+          <img className="d-inline-block align-top size-logo" src={logo} alt="React Bootstrap logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-          {/* <Nav className="me-auto">
-            <Nav.Link href="#home">Home</Nav.Link>
-            <Nav.Link href="#link">Link</Nav.Link>
-          </Nav> */}
-        </Navbar.Collapse>
-        <Button className="color-">Sign in</Button>
-        <Button>Login</Button>
+        <InputGroup size="sm" className="mb-3 box-style">
+          <FormControl placeholder="Search" aria-label="Username" aria-describedby="basic-addon1" />
+        </InputGroup>
+        <Navbar.Collapse id="basic-navbar-nav"></Navbar.Collapse>
+        <Button className="mx-2">Signup</Button>
+        <Button className="mx-2">Login</Button>
       </Container>
     </Navbar>
   );
