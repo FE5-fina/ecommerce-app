@@ -1,23 +1,18 @@
 import React from "react";
 import { Container, Col, Row, Button, Form } from "react-bootstrap";
-import "../style/EditProfile.css";
+import "../../style/Address.css";
 import { useNavigate } from "react-router-dom";
 
-import user from "../img/user.png";
-
-function EditProfile() {
+function Address() {
   const navigate = useNavigate();
 
   return (
     <>
-      <div className="editProfile-content">
+      <div className="address-content">
         <Container>
           <Row>
             <Col xs={11} md={11}>
-              <div className="editProfile-content">
-                <div className="d-flex justify-content-center">
-                  <img className="user-img" src={user} alt="" />
-                </div>
+              <div className="address-content">
                 <Container className="justify-content-center mt-4">
                   <Row className="mt-2">
                     <Col>Nama</Col>
@@ -26,46 +21,40 @@ function EditProfile() {
                     </Col>
                   </Row>
                   <Row className="mt-2">
-                    <Col>User Name</Col>
+                    <Col>No Hanphone</Col>
                     <Col className="d-grid gap-2">
-                      <Form.Control
-                        type="text"
-                        placeholder="Buat user yang unik"
-                      />
+                      <Form.Control type="text" placeholder="No Hanphone" />
                     </Col>
                   </Row>
                   <Row className="mt-2">
-                    <Col>Email</Col>
+                    <Col>Jalan</Col>
                     <Col className="d-grid gap-2">
-                      <Form.Control type="text" placeholder="Tambahkan email" />
+                      <Form.Control type="text" placeholder=" Jalan" />
                     </Col>
                   </Row>
                   <Row className="mt-2">
-                    <Col>Nomer Hanphone</Col>
+                    <Col>Kelurahan</Col>
                     <Col className="d-grid gap-2">
-                      <Form.Control type="text" placeholder="No handphone" />
+                      <Form.Control type="text" placeholder="Kelurahan" />
                     </Col>
                   </Row>
                   <Row className="mt-2">
-                    <Col>Jenis Kelamin</Col>
+                    <Col>Kecamatan</Col>
                     <Col className="d-grid gap-2">
-                      <Form.Select id="disabledSelect">
-                        <option>Pilih Jenis Kelamin</option>
-                        <option>Laki-laki</option>
-                        <option>Perempuan</option>
-                      </Form.Select>
+                      <Form.Control type="text" placeholder="Kecamatan" />
                     </Col>
                   </Row>
                   <Row className="mt-2">
-                    <Col>Tanggal Lahir</Col>
+                    <Col>Kota</Col>
                     <Col className="d-grid gap-2">
-                      <Form.Control type="date" />
+                      <Form.Control type="text" placeholder="Kota" />
                     </Col>
                   </Row>
+
                   <Row className="mt-2">
-                    <Col>Alamat</Col>
+                    <Col>Kode Pos</Col>
                     <Col className="d-grid gap-2">
-                      <Form.Control type="text" placeholder="Alamat" />
+                      <Form.Control type="text" placeholder="Kode Pos" />
                     </Col>
                   </Row>
                 </Container>
@@ -74,9 +63,9 @@ function EditProfile() {
 
             <Col xs={1} md={1}>
               <Button
-                className="btn-edit"
+                className="btn-save"
                 onClick={() => {
-                  navigate("/profile");
+                  navigate("/payment");
                 }}
               >
                 Save
@@ -89,4 +78,4 @@ function EditProfile() {
   );
 }
 
-export default EditProfile;
+export default Address;

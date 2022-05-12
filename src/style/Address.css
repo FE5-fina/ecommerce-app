@@ -1,0 +1,16 @@
+.address-content {
+  margin: 0vw 10vw;
+  padding: 5vh;
+}
+.user-img {
+  width: 150px !important;
+  height: auto !important;
+}
+.text-address {
+  color: #523a6d;
+  margin-bottom: 3vw;
+  margin-top: 2vw;
+}
+.btn-save {
+  background-color: #523a6d !important;
+}

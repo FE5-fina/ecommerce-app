@@ -1,11 +1,14 @@
 import React from "react";
 import { Container, Col, Row, Button, Card } from "react-bootstrap";
 import "../style/Profile.css";
+import { useNavigate } from "react-router-dom";
 
 import user from "../img/user.png";
 import chair from "../img/chair.svg";
 
 function Profile() {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="profile-content">
@@ -23,7 +26,12 @@ function Profile() {
               Alamat
             </Col>
             <Col xs={1} md={1}>
-              <Button className="btn-edit" type="submit">
+              <Button
+                className="btn-edit"
+                onClick={() => {
+                  navigate("/edit-profile");
+                }}
+              >
                 Edit
               </Button>
             </Col>

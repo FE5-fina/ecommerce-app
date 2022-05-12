@@ -15,5 +15,5 @@
   width: 40vh;
 }
 .btn-product {
-  outline-color: #523a6d;
+  background-color: #523a6d !important;
 }

@@ -1,12 +1,15 @@
 import React from "react";
 import { Container, Row, Col, Button, Form } from "react-bootstrap";
 import "../../style/Payment.css";
+import { useNavigate } from "react-router-dom";
 
 import product1 from "../../img/product-toner.svg";
 import product2 from "../../img/product-propolist.svg";
 import map from "../../img/Union.svg";
 
 function Payment() {
+  const navigate = useNavigate();
+
   return (
     <>
       <div className="border rounded border-dark payment-content">
@@ -26,7 +29,14 @@ function Payment() {
             <Form.Control type="text" placeholder="Utama" />
           </Col>
           <Col xs={1} md={1}>
-            <Button variant="outline-secondary">Ubah</Button>{" "}
+            <Button
+              className="btn-product"
+              onClick={() => {
+                navigate("/address");
+              }}
+            >
+              Ubah
+            </Button>
           </Col>
         </Row>
       </div>
