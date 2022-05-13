@@ -93,7 +93,7 @@ function Signup() {
             />
           </Form.Group>
 
-          <Button className="btn" onClick={() => signUpSubmit()}>
+          <Button className="btn-signUp" onClick={() => signUpSubmit()}>
             {isLoading ? "Submitting.." : "Submit"}
           </Button>
         </Form>

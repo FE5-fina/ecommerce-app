@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { Form, Container, Row, Col, Button } from "react-bootstrap";
-import "../../style/CardDetail.css";
+import "../../style/CartDetail.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
@@ -136,4 +136,4 @@ function CardDetail() {
   );
 }
 
-export default CartDetail;
+export default CardDetail;

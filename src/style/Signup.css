@@ -7,11 +7,11 @@
   height: auto !important;
 }
 .text-signUp {
-  color: #523A6D;
+  color: #523a6d;
   margin-bottom: 3vw;
   margin-top: 2vw;
 }
-.btn {
-  background-color: #523A6D !important;
-  border-radius: 1px solid #523A6D;
+.btn-signUp {
+  background-color: #523a6d !important;
+  border-radius: 1px solid #523a6d;
 }
