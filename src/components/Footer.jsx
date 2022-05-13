@@ -15,7 +15,7 @@ function FooterComponent() {
       <Container className="text-center pt-3 pb-3 content-footer">
         <Row>
           <Col>
-            <h6>Tokopedia</h6>
+            <h6>Violet</h6>
           </Col>
           <Col>
             <h6>Pelayanan</h6>
@@ -25,7 +25,7 @@ function FooterComponent() {
           </Col>
         </Row>
         <Row>
-          <Col>Tentang Tokopedia</Col>
+          <Col>Tentang Violet</Col>
           <Col>Bantuan</Col>
           <Col>
             <img className="sosmed" src={fb} alt="" />
@@ -37,7 +37,7 @@ function FooterComponent() {
           </Col>
         </Row>
         <Row>
-          <Col>Tokopedia Care</Col>
+          <Col>Violet Care</Col>
           <Col>Hubungi Kami</Col>
           <Col></Col>
         </Row>
