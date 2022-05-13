@@ -27,9 +27,8 @@ function CartDetail() {
           }
         );
         setData(response.data);
-        console.log(data);
       } catch (error) {
-        console.error(error);
+        console.log(error);
       }
       setLoading(false);
     };
@@ -38,6 +37,7 @@ function CartDetail() {
   }, []);
 
   const totalPrice = () => {
+    if (!data) return 0;
     let total = 0;
     for (let i = 0; i < data.length; i++) {
       total += data[i].subTotal;
@@ -46,6 +46,7 @@ function CartDetail() {
   };
 
   const totalProduct = () => {
+    if (!data) return 0;
     let total = 0;
     for (let i = 0; i < data.length; i++) {
       for (let j = 0; j < data[i].product.length; j++) {
@@ -75,55 +76,56 @@ function CartDetail() {
       </div>
       <div className="border rounded border-dark cardDetail-content">
         <Container>
-          {data.map((seller) => (
-            <div>
-              <Row>
-                <Col className="d-flex justify-content-start">
-                  <Form.Check aria-label="option 1" />
-                  <p className="mx-2">
-                    <span>{seller.nameSeller}</span>
-                  </p>
-                </Col>
-              </Row>
-              {seller.product.map((product) => (
+          {data &&
+            data.map((seller) => (
+              <div>
                 <Row>
-                  <Col xs={6} md={6} className="d-flex justify-content-start">
-                    <Row>
-                      <Col xs={1} md={1}>
-                        <Form.Check className="mt-4" aria-label="option 1" />
-                      </Col>
-                      <Col xs={4} md={4}>
-                        <img
-                          className="product-img mb-5"
-                          src={product1}
-                          alt=""
-                        />
-                      </Col>
-                      <Col xs={5} md={5}>
-                        <h6>
-                          <span>{product.nameProduct}</span>
-                        </h6>
-                      </Col>
-                      <Col xs={2} md={2}></Col>
-                    </Row>
-                  </Col>
-                  <Col xs={2} md={2}>
-                    <span>Rp. {product.price}</span>
-                  </Col>
-                  <Col xs={2} md={2}>
-                    <Button variant="outline-secondary">-</Button>{" "}
-                    <Button variant="outline-secondary">{product.qty}</Button>{" "}
-                    <Button variant="outline-secondary">+</Button>{" "}
-                  </Col>
-                  <Col xs={2} md={2}>
-                    <p className="text-cardDetail">
-                      <span>Rp. {product.price * product.qty}</span>
+                  <Col className="d-flex justify-content-start">
+                    <Form.Check aria-label="option 1" />
+                    <p className="mx-2">
+                      <span>{seller.nameSeller}</span>
                     </p>
                   </Col>
                 </Row>
-              ))}
-            </div>
-          ))}
+                {seller.product.map((product) => (
+                  <Row>
+                    <Col xs={6} md={6} className="d-flex justify-content-start">
+                      <Row>
+                        <Col xs={1} md={1}>
+                          <Form.Check className="mt-4" aria-label="option 1" />
+                        </Col>
+                        <Col xs={4} md={4}>
+                          <img
+                            className="product-img mb-5"
+                            src={product1}
+                            alt=""
+                          />
+                        </Col>
+                        <Col xs={5} md={5}>
+                          <h6>
+                            <span>{product.nameProduct}</span>
+                          </h6>
+                        </Col>
+                        <Col xs={2} md={2}></Col>
+                      </Row>
+                    </Col>
+                    <Col xs={2} md={2}>
+                      <span>Rp. {product.price}</span>
+                    </Col>
+                    <Col xs={2} md={2}>
+                      <Button variant="outline-secondary">-</Button>{" "}
+                      <Button variant="outline-secondary">{product.qty}</Button>{" "}
+                      <Button variant="outline-secondary">+</Button>{" "}
+                    </Col>
+                    <Col xs={2} md={2}>
+                      <p className="text-cardDetail">
+                        <span>Rp. {product.price * product.qty}</span>
+                      </p>
+                    </Col>
+                  </Row>
+                ))}
+              </div>
+            ))}
         </Container>
       </div>
       <div className="border rounded border-dark cardDetail-content">
