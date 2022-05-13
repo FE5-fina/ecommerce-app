@@ -6,11 +6,9 @@ import { useNavigate } from "react-router-dom";
 
 import product1 from "../../img/product-toner.svg";
 
-function CardDetail() {
+function CartDetail() {
   const [loading, setLoading] = useState(true);
   const [data, setData] = useState([]);
-
-  const [quantity, setQuantity] = useState("2");
 
   const navigate = useNavigate();
 
@@ -159,4 +157,4 @@ function CardDetail() {
   );
 }
 
-export default CardDetail;
+export default CartDetail;
