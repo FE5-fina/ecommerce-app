@@ -1,0 +1,12 @@
+img.size-benner {
+  width: 84vw;
+  margin: 50px 50px;
+  display: flex;
+  justify-content: center;
+}
+
+.product-title {
+  font-size: 35px;
+  display: flex;
+  justify-content: center;
+}

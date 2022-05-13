@@ -12,7 +12,7 @@ function Header() {
           <img className="d-inline-block align-top size-logo" src={logo} alt="React Bootstrap logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <InputGroup size="sm" className="mb-3 box-style">
+        <InputGroup size="sm" className="mb-2 box-style">
           <FormControl placeholder="Search" aria-label="Username" aria-describedby="basic-addon1" />
         </InputGroup>
         <Navbar.Collapse id="basic-navbar-nav"></Navbar.Collapse>

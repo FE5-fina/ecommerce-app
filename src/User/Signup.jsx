@@ -5,6 +5,7 @@ import { useNavigate } from "react-router-dom";
 import "../style/Signup.css";
 
 import logo from "../img/logo.png";
+import Login from "./Login";
 
 function Signup() {
   const [name, setName] = useState("");
@@ -30,6 +31,7 @@ function Signup() {
       .post("http://54.179.30.163:8080/user", body)
       .then(({ data }) => {
         console.log(data);
+        navigate(`/login`);
       })
       .catch((err) => {
         alert(err?.response?.data?.message);

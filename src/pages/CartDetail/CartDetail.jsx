@@ -1,11 +1,11 @@
 import React from "react";
 import { Form, Container, Row, Col, Button } from "react-bootstrap";
-import "../../style/CardDetail.css";
+import "../../style/CartDetail.css";
 
 import product1 from "../../img/product-toner.svg";
 import product2 from "../../img/product-propolist.svg";
 
-function CardDetail() {
+function CartDetail() {
   return (
     <>
       <div className="border rounded border-dark cardDetail-content">
@@ -42,10 +42,7 @@ function CardDetail() {
                   <img className="product-img mb-5" src={product1} alt="" />
                 </Col>
                 <Col xs={5} md={5}>
-                  <p>
-                    Somethinc SUPPLE POWER Hyaluronic 9+ Onsen Essence Toner -
-                    ANNIVERSARY EDITION
-                  </p>
+                  <p>Somethinc SUPPLE POWER Hyaluronic 9+ Onsen Essence Toner - ANNIVERSARY EDITION</p>
                 </Col>
                 <Col xs={2} md={2}>
                   <p>Variasi :</p>
@@ -56,9 +53,7 @@ function CardDetail() {
               <p>Rp.89.000</p>
             </Col>
             <Col xs={2} md={2}>
-              <Button variant="outline-secondary">-</Button>{" "}
-              <Button variant="outline-secondary">1</Button>{" "}
-              <Button variant="outline-secondary">+</Button>{" "}
+              <Button variant="outline-secondary">-</Button> <Button variant="outline-secondary">1</Button> <Button variant="outline-secondary">+</Button>{" "}
             </Col>
             <Col xs={2} md={2}>
               <p className="text-cardDetail">Rp.89.000</p>
@@ -85,9 +80,7 @@ function CardDetail() {
               <p>Rp.139.000</p>
             </Col>
             <Col xs={2} md={2}>
-              <Button variant="outline-secondary">-</Button>{" "}
-              <Button variant="outline-secondary">1</Button>{" "}
-              <Button variant="outline-secondary">+</Button>{" "}
+              <Button variant="outline-secondary">-</Button> <Button variant="outline-secondary">1</Button> <Button variant="outline-secondary">+</Button>{" "}
             </Col>
             <Col xs={2} md={2}>
               <p className="text-cardDetail">Rp.139.000</p>
@@ -121,4 +114,4 @@ function CardDetail() {
   );
 }
 
-export default CardDetail;
+export default CartDetail;
