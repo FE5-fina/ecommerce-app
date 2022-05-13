@@ -24,7 +24,7 @@ function Login() {
     axios
       .post("http://54.179.30.163:8080/login", body)
       .then(({ data }) => {
-        localStorage.setItem("token", data.token);
+        localStorage.setItem("token", data.data.Token);
 
         navigate("/");
       })

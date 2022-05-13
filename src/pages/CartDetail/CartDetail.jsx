@@ -17,11 +17,19 @@ function CardDetail() {
   useEffect(() => {
     const fetchData = async () => {
       setLoading(true);
+      console.log(localStorage.getItem("token"));
       try {
         const { data: response } = await axios.get(
-          "http://54.179.30.163:8080/product"
+          "http://54.179.30.163:8080/cart",
+
+          {
+            headers: {
+              Authorization: "Bearer " + localStorage.getItem("token"),
+            },
+          }
         );
         setData(response.data);
+        console.log(data);
       } catch (error) {
         console.error(error);
       }
@@ -30,6 +38,24 @@ function CardDetail() {
 
     fetchData();
   }, []);
+
+  const totalPrice = () => {
+    let total = 0;
+    for (let i = 0; i < data.length; i++) {
+      total += data[i].subTotal;
+    }
+    return total;
+  };
+
+  const totalProduct = () => {
+    let total = 0;
+    for (let i = 0; i < data.length; i++) {
+      for (let j = 0; j < data[i].product.length; j++) {
+        if (data[i].product[j].toBuy === "yes") total++;
+      }
+    }
+    return total;
+  };
 
   return (
     <>
@@ -51,56 +77,55 @@ function CardDetail() {
       </div>
       <div className="border rounded border-dark cardDetail-content">
         <Container>
-          <Row>
-            <Col className="d-flex justify-content-start">
-              <Form.Check aria-label="option 1" />
-              <p className="mx-2">
-                {data.map((e) => (
-                  <span>{e.nameSeller}</span>
-                ))}
-              </p>
-            </Col>
-          </Row>
-          <Row>
-            <Col xs={6} md={6} className="d-flex justify-content-start">
+          {data.map((seller) => (
+            <div>
               <Row>
-                <Col xs={1} md={1}>
-                  <Form.Check className="mt-4" aria-label="option 1" />
+                <Col className="d-flex justify-content-start">
+                  <Form.Check aria-label="option 1" />
+                  <p className="mx-2">
+                    <span>{seller.nameSeller}</span>
+                  </p>
                 </Col>
-                <Col xs={4} md={4}>
-                  <img className="product-img mb-5" src={product1} alt="" />
-                </Col>
-                <Col xs={5} md={5}>
-                  <h6>
-                    {data.map((e) => (
-                      <span>{e.name}</span>
-                    ))}
-                  </h6>
-                  {data.map((e) => (
-                    <span>{e.description}</span>
-                  ))}
-                </Col>
-                <Col xs={2} md={2}></Col>
               </Row>
-            </Col>
-            <Col xs={2} md={2}>
-              {data.map((e) => (
-                <span>Rp. {e.price}</span>
+              {seller.product.map((product) => (
+                <Row>
+                  <Col xs={6} md={6} className="d-flex justify-content-start">
+                    <Row>
+                      <Col xs={1} md={1}>
+                        <Form.Check className="mt-4" aria-label="option 1" />
+                      </Col>
+                      <Col xs={4} md={4}>
+                        <img
+                          className="product-img mb-5"
+                          src={product1}
+                          alt=""
+                        />
+                      </Col>
+                      <Col xs={5} md={5}>
+                        <h6>
+                          <span>{product.nameProduct}</span>
+                        </h6>
+                      </Col>
+                      <Col xs={2} md={2}></Col>
+                    </Row>
+                  </Col>
+                  <Col xs={2} md={2}>
+                    <span>Rp. {product.price}</span>
+                  </Col>
+                  <Col xs={2} md={2}>
+                    <Button variant="outline-secondary">-</Button>{" "}
+                    <Button variant="outline-secondary">{product.qty}</Button>{" "}
+                    <Button variant="outline-secondary">+</Button>{" "}
+                  </Col>
+                  <Col xs={2} md={2}>
+                    <p className="text-cardDetail">
+                      <span>Rp. {product.price * product.qty}</span>
+                    </p>
+                  </Col>
+                </Row>
               ))}
-            </Col>
-            <Col xs={2} md={2}>
-              <Button variant="outline-secondary">-</Button>{" "}
-              <Button variant="outline-secondary">{quantity}</Button>{" "}
-              <Button variant="outline-secondary">+</Button>{" "}
-            </Col>
-            <Col xs={2} md={2}>
-              <p className="text-cardDetail">
-                {data.map((e) => (
-                  <span>Rp. {e.price * quantity}</span>
-                ))}
-              </p>
-            </Col>
-          </Row>
+            </div>
+          ))}
         </Container>
       </div>
       <div className="border rounded border-dark cardDetail-content">
@@ -108,17 +133,15 @@ function CardDetail() {
           <Row>
             <Col className="d-flex justify-content-start">
               <Form.Check aria-label="option 1" />
-              <p className="mx-2">Pilih semua ({quantity}) </p>
+              <p className="mx-2">Pilih semua ({totalProduct()}) </p>
               <p className="mx-2">Hapus</p>
             </Col>
             <Col xs={2} md={2}>
-              <h6>Total ({quantity} Produk) </h6>
+              <h6>Total ({totalProduct()} Produk) </h6>
             </Col>
             <Col xs={2} md={2}>
               <h6 className="text-cardDetail">
-                {data.map((e) => (
-                  <span>Rp. {e.price * quantity}</span>
-                ))}
+                <span>Rp. {totalPrice()}</span>
               </h6>
             </Col>
             <Col xs={2} md={2}>
