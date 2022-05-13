@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Row, Col } from "react-bootstrap";
 import "../style/Footer.css";
 
 import fb from "../img/fb.svg";
@@ -9,23 +9,17 @@ import tiktok from "../img/tiktok.svg";
 import linkedin from "../img/linkedin.svg";
 import youtube from "../img/youtube.svg";
 
-function FooterComponent() {
+function Footer() {
   return (
     <>
-      <Container className="text-center pt-3 pb-3 content-footer">
+      <div className="text-center pt-3 pb-3 content-footer text-align-left">
         <Row>
-          <Col>
-            <h6>Violet</h6>
-          </Col>
-          <Col>
-            <h6>Pelayanan</h6>
-          </Col>
-          <Col>
-            <h6>Follow Kami</h6>
-          </Col>
+          <Col>VIOLET</Col>
+          <Col>Pelayanan</Col>
+          <Col>Follow Kami</Col>
         </Row>
         <Row>
-          <Col>Tentang Violet</Col>
+          <Col>Tentang VIOLET</Col>
           <Col>Bantuan</Col>
           <Col>
             <img className="sosmed" src={fb} alt="" />
@@ -37,7 +31,7 @@ function FooterComponent() {
           </Col>
         </Row>
         <Row>
-          <Col>Violet Care</Col>
+          <Col>VIOLET Care</Col>
           <Col>Hubungi Kami</Col>
           <Col></Col>
         </Row>
@@ -46,8 +40,8 @@ function FooterComponent() {
           <Col>Kebijakan Privasi</Col>
           <Col></Col>
         </Row>
-      </Container>
+      </div>
     </>
   );
 }
-export default FooterComponent;
+export default Footer;

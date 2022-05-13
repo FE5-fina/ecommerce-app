@@ -136,4 +136,4 @@ function CardDetail() {
   );
 }
 
-export default CardDetail;
+export default CartDetail;

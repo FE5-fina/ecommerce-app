@@ -41,6 +41,7 @@ function Profile() {
           <Card.Img variant="top" src={chair} />
           <Card.Body>
             <Card.Title>Dinning Chair</Card.Title>
+            <Card.Text>Rp. 199.000</Card.Text>
           </Card.Body>
         </Card>
       </div>
